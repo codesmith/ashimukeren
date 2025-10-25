@@ -406,7 +406,11 @@
 
 **Purpose**: Apple App Storeへのアプリ公開
 
-**Status**: ✅ Guide Ready (0/9 tasks) - Ready to execute
+**Status**: ✅ Complete (9/9 tasks, 100%) - Submitted for review! 🎉
+
+**Submission Date**: 2025-10-25 15:52
+**Build**: 1.0.0 (1)
+**Review Status**: 審査待ち (Waiting for Review)
 
 **Guide**: `IOS_APP_STORE_GUIDE.md` - Complete step-by-step iOS App Store publication guide
 
@@ -414,81 +418,81 @@
 
 ### D3.1: Apple Developer Setup
 
-- [ ] T-D3.1.1 [MANUAL] Apple Developer Program 登録
+- [x] T-D3.1.1 [MANUAL] Apple Developer Program 登録
   - Sign up at https://developer.apple.com/programs/
   - Pay $99/year
-  - **Result**: Apple Developer account active
+  - **Result**: ✅ Apple Developer account active (Developer: Takaomi Yonejima)
 
-- [ ] T-D3.1.2 [MANUAL] App ID 作成
+- [x] T-D3.1.2 [MANUAL] App ID 作成
   - Developer Portal → Certificates, IDs & Profiles → App IDs
   - Bundle ID: `jp.codesmith.ashimukeren`
   - App name: `あしむけれん`
-  - **Result**: App ID registered
+  - **Result**: ✅ App ID registered
 
 ---
 
 ### D3.2: Provisioning & Signing
 
-- [ ] T-D3.2.1 [MANUAL] Distribution Certificate 作成
+- [x] T-D3.2.1 [MANUAL] Distribution Certificate 作成
   - Xcode → Settings → Accounts → Manage Certificates
   - Create "Apple Distribution" certificate
-  - **Result**: Distribution certificate available
+  - **Result**: ✅ Distribution certificate available
 
-- [ ] T-D3.2.2 [MANUAL] Provisioning Profile 作成
+- [x] T-D3.2.2 [MANUAL] Provisioning Profile 作成
   - Developer Portal → Provisioning Profiles
   - Create "App Store" profile for app ID
   - Download and install
-  - **Result**: App Store provisioning profile ready
+  - **Result**: ✅ App Store provisioning profile ready
 
-- [ ] T-D3.2.3 Xcode署名設定
+- [x] T-D3.2.3 Xcode署名設定
   - Open `ios/Runner.xcworkspace` in Xcode
   - Select Runner target → Signing & Capabilities
   - Set Team, Bundle ID
-  - **Result**: Xcode configured for App Store signing
+  - **Result**: ✅ Xcode configured for App Store signing
 
 ---
 
 ### D3.3: Archive Build
 
-- [ ] T-D3.3.1 Archive ビルド作成
+- [x] T-D3.3.1 Archive ビルド作成
   - Xcode → Product → Archive
   - Wait for build to complete
   - Verify Archive appears in Organizer
-  - **Result**: Archive ready for upload
+  - **Result**: ✅ Archive ready for upload (CocoaPods fix applied with `pod install`)
 
-- [ ] T-D3.3.2 [MANUAL] App Store Connect アップロード
+- [x] T-D3.3.2 [MANUAL] App Store Connect アップロード
   - Organizer → Distribute App → App Store Connect
   - Upload to App Store Connect
   - Wait for processing (10-30 min)
-  - **Result**: Build available in App Store Connect
+  - **Result**: ✅ Build 1.0.0 (1) available in App Store Connect (TestFlight tested successfully)
 
 ---
 
 ### D3.4: App Store Connect Setup
 
-- [ ] T-D3.4.1 [MANUAL] App Store Connect でアプリ作成
+- [x] T-D3.4.1 [MANUAL] App Store Connect でアプリ作成
   - https://appstoreconnect.apple.com/
   - My Apps → + → New App
-  - Platform: iOS, Name: あしむけれん, Bundle ID, SKU
-  - **Result**: App created in App Store Connect
+  - Platform: iOS, Name: 足向けれん, Bundle ID, SKU
+  - **Result**: ✅ App created in App Store Connect
 
-- [ ] T-D3.4.2 [MANUAL] ストア掲載情報入力
+- [x] T-D3.4.2 [MANUAL] ストア掲載情報入力
   - App Information: Name, category, privacy policy URL
   - Pricing & Availability: Free, all countries
   - App Privacy: Fill privacy questionnaire
-  - Version Information: Screenshots, description, keywords
+  - Version Information: Screenshots (iPhone 16 Pro Max + iPad Pro 13"), description, keywords
   - Build: Select uploaded build
-  - **Result**: App Store listing complete
+  - **Result**: ✅ App Store listing complete (Copyright: 2025 Takaomi Yonejima, Support: senzureba@gmail.com)
 
 ---
 
 ### D3.5: Submission
 
-- [ ] T-D3.5.1 [MANUAL] 審査提出
+- [x] T-D3.5.1 [MANUAL] 審査提出
   - Review all info
   - Submit for Review
   - Wait for Apple review (1-7 days)
-  - **Result**: App submitted for review
+  - **Result**: ✅ App submitted for review (2025-10-25 15:52 - Status: 審査待ち)
 
 **Checkpoint**: iOS app published to App Store 🎉
 
