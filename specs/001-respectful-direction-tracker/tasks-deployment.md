@@ -31,9 +31,10 @@
 
 **Purpose**: アプリをストアに提出する前の準備作業
 
-**Status**: ⏳ In Progress (18/20 tasks, 90%) - User completing MANUAL tasks
+**Status**: ✅ Complete (20/20 tasks, 100%) - Ready for App Store submission
 **Guide**: `GOOGLE_CLOUD_SETUP_GUIDE.md`, `PRIVACY_POLICY.md`, `DEVICE_TESTING_GUIDE.md`
 **Note**: Android/iOS use SEPARATE API keys (1 platform per key)
+**Completed**: API Security ✅, App Identity ✅, Legal & Privacy ✅, Device Testing ✅
 
 ### D1.1: API Key Security (APIキーセキュリティ) - 最重要
 
@@ -217,9 +218,9 @@
 
 ### D1.3: Legal & Privacy (法的要件)
 
-**Status**: ⏳ User Setup (2/2 tasks) - User creating privacy policy and support email
+**Status**: ✅ Completed (2/2 tasks)
 
-- [ ] T-D1.3.1 [MANUAL] プライバシーポリシー作成 (User setup in progress)
+- [x] T-D1.3.1 [MANUAL] プライバシーポリシー作成
   - **Why**: Required by Play Store/App Store for apps using location data
   - **Content**:
     - What data is collected (location, names, addresses)
@@ -228,20 +229,20 @@
     - Third-party services (Google Maps API)
     - Contact information
   - **Publish**: GitHub Pages, Google Sites, or personal website
-  - **Result**: URL for privacy policy (e.g., `https://yourname.github.io/ashimukeren/privacy`)
+  - **Result**: ✅ https://codesmith.github.io/ashimukeren/privacy
 
-- [ ] T-D1.3.2 [MANUAL] サポートメールアドレス準備 (User setup in progress)
+- [x] T-D1.3.2 [MANUAL] サポートメールアドレス準備
   - Create dedicated support email (e.g., `ashimukeren.support@gmail.com`)
   - Add to Play Store/App Store listings
-  - **Result**: User support channel
+  - **Result**: ✅ senzureba@gmail.com
 
 ---
 
 ### D1.4: Pre-Release Verification (公開前確認)
 
-**Status**: ⏸️ Pending (1/1 task)
+**Status**: ✅ Completed (1/1 task)
 
-- [ ] T-D1.4.1 実機での最終動作確認
+- [x] T-D1.4.1 実機での最終動作確認
   - Test on multiple Android devices (different OS versions)
   - Test on iPhone (real device)
   - Verify all 3 user stories (registration, map, compass)
