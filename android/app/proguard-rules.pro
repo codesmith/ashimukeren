@@ -58,6 +58,11 @@
     java.lang.Object readResolve();
 }
 
+## Google Play Core Library (for deferred components)
+# Keep Play Core classes
+-keep class com.google.android.play.core.** { *; }
+-dontwarn com.google.android.play.core.**
+
 ## Suppress warnings
 -dontwarn org.conscrypt.**
 -dontwarn org.bouncycastle.**
