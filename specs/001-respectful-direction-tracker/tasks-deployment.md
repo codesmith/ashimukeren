@@ -1,8 +1,8 @@
 # Store Deployment Tasks: Respectful Direction Tracker
 
 **Track**: Store Publication (ストア公開トラック)
-**Status**: Phase D1 Automation Complete (13/19 tasks), Phase D3 Guide Ready
-**Last Updated**: 2025-10-20
+**Status**: iOS PUBLISHED ✅, Android Closed Test (審査中)
+**Last Updated**: 2025-10-30
 
 ---
 
@@ -104,18 +104,24 @@
 
 - [x] T-D1.1.5 [MANUAL] [LAYER 2 - CRITICAL] SHA-1証明書フィンガープリント登録
   - **Why**: Adds second factor authentication (app signature verification)
-  - **Debug certificate**:
+  - **Debug certificate** (for `flutter run`):
     ```bash
     keytool -list -v -keystore ~/.android/debug.keystore \
       -alias androiddebugkey -storepass android -keypass android | grep SHA1
+    # Result: D8:82:8E:86:4C:5C:28:2E:6A:AF:19:1B:B2:FE:84:38:6A:F2:5B:BE
     ```
-  - **Release certificate** (after T-D2.1):
+  - **Upload key certificate** (our signing key):
     ```bash
-    keytool -list -v -keystore ~/ashimukeren-release-key.jks \
+    keytool -list -v -keystore /Users/beishima/StudioProjects/ashimukeren-release-key.jks \
       -alias ashimukeren -storepass <password> | grep SHA1
+    # Result: 04:DC:8E:D0:07:30:52:CD:F2:24:87:5E:97:2C:9B:0F:28:C6:C3:DD
     ```
-  - **Action**: Add BOTH SHA-1 fingerprints to Google Cloud Console
-  - **Result**: App must be signed with correct certificate
+  - **Play Console App Signing key** (Google's re-signing):
+    - Play Console → 設定 → アプリの整合性 → アプリ署名鍵の証明書
+    - This is the SHA-1 used by apps downloaded from Play Store
+    - ✅ **Added to Google Cloud Console** (2025-10-30)
+  - **Action**: Add ALL THREE SHA-1 fingerprints to Google Cloud Console
+  - **Result**: App works in development, testing, and production
 
 - [x] T-D1.1.6 [MANUAL] [MONITORING] API使用量監視・請求アラート設定
   - **Why**: Detect anomalies before significant billing impact
@@ -406,11 +412,14 @@
 
 **Purpose**: Apple App Storeへのアプリ公開
 
-**Status**: ✅ Complete (9/9 tasks, 100%) - Submitted for review! 🎉
+**Status**: ✅ PUBLISHED (9/9 tasks, 100%) - Live on App Store! 🎉
 
-**Submission Date**: 2025-10-25 15:52
+**Submission Date**: 2025-10-28 08:16 PDT
+**Approval Date**: 2025-10-28 (Completed review)
+**Release Date**: 2025-10-30 00:00 JST (Auto-release)
 **Build**: 1.0.0 (1)
-**Review Status**: 審査待ち (Waiting for Review)
+**Review Status**: ✅ Approved and Published
+**App Store URL**: https://apps.apple.com/app/足向けれん/id6754498298
 
 **Guide**: `IOS_APP_STORE_GUIDE.md` - Complete step-by-step iOS App Store publication guide
 
