@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/respectful_person.dart';
 import '../repositories/person_repository.dart';
 import '../services/geocoding_service.dart';
+import '../providers/map_providers.dart';
 
 /// State for Registration List Screen
 class RegistrationListState {
@@ -72,13 +73,17 @@ class NewRegistrationState {
 class RegistrationViewModel extends StateNotifier<RegistrationListState> {
   final PersonRepository _personRepository;
   final GeocodingService _geocodingService;
+  final Ref _ref;
 
   // Separate state for new registration screen
   NewRegistrationState _newRegistrationState = const NewRegistrationState();
   NewRegistrationState get newRegistrationState => _newRegistrationState;
 
-  RegistrationViewModel(this._personRepository, this._geocodingService)
-      : super(const RegistrationListState()) {
+  RegistrationViewModel(
+    this._personRepository,
+    this._geocodingService,
+    this._ref,
+  ) : super(const RegistrationListState()) {
     // Load persons on initialization
     loadPersons();
   }
@@ -105,6 +110,8 @@ class RegistrationViewModel extends StateNotifier<RegistrationListState> {
   Future<void> deletePerson(int id) async {
     try {
       await _personRepository.deletePerson(id);
+      // Invalidate MapViewModel to trigger reload
+      _ref.invalidate(mapViewModelProvider);
       // Reload the list after deletion
       await loadPersons();
     } catch (e) {
@@ -147,6 +154,9 @@ class RegistrationViewModel extends StateNotifier<RegistrationListState> {
 
       // Save to database
       await _personRepository.insertPerson(person);
+
+      // Invalidate MapViewModel to trigger reload
+      _ref.invalidate(mapViewModelProvider);
 
       // Update state to success
       _newRegistrationState = _newRegistrationState.copyWith(

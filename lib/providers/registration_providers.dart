@@ -10,7 +10,7 @@ final registrationViewModelProvider =
     StateNotifierProvider<RegistrationViewModel, RegistrationListState>((ref) {
   final personRepository = ref.watch(personRepositoryProvider);
   final geocodingService = ref.watch(geocodingServiceProvider);
-  return RegistrationViewModel(personRepository, geocodingService);
+  return RegistrationViewModel(personRepository, geocodingService, ref);
 });
 
 /// Provider for accessing NewRegistrationState
